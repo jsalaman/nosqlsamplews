@@ -41,7 +41,6 @@ public class GreetingController {
 	
 	@GetMapping("/students")
 	public List<Student> students(@RequestParam(value = "name", defaultValue = "World") String name) {
-		Student[] arr = new Student[] {new Student(1,"Juan"),new Student(2,"Luis")};
 		List<Student> stu = new ArrayList<Student>();
 		try {
 			NoSQLHandle handle = generateNoSQLHandle();
