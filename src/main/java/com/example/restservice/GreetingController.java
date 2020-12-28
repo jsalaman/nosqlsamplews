@@ -33,7 +33,6 @@ public class GreetingController {
 			NoSQLHandle handle = generateNoSQLHandle();
 			readRows(handle);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return new Greeting(counter.incrementAndGet(), String.format(template, name));
@@ -59,7 +58,6 @@ public class GreetingController {
 	        } while (!queryRequest.isDone()); /* handle result */
 	        
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
@@ -73,7 +71,6 @@ public class GreetingController {
 			handle = generateNoSQLHandle();
 			createTable(handle);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			return new Status("nok","tabla NO creada:"+ e.getMessage());
 		}
@@ -88,7 +85,6 @@ public class GreetingController {
 			handle = generateNoSQLHandle();
 			dropTable(handle);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			return new Status("nok","tabla NO eliminada:"+ e.getMessage());
 		}
@@ -106,7 +102,6 @@ public class GreetingController {
 			handle = generateNoSQLHandle();
 			writeRows(handle, studentId, name);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			return new Status("nok","row NO creada:"+ e.getMessage());
 		}
